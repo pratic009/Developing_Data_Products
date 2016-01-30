@@ -1,0 +1,43 @@
+---
+title: "Price V/S Consumption"
+output: slidy_presentation
+---
+
+## Description
+
+The Shiny App displays Prive V/S Consumption insights for years 2012 to 2014:
+
+- gas
+- electricity
+- water
+
+
+These data are diffed, week by week to get the week's consumption.
+
+Further more, a formula is applied to compute an estimate price (expressed in
+EUR) for the week's consumption.
+
+
+## Example
+
+Here are the first 10 lines of the Excel file (for the columns which interest
+me, the ones I show in the barplot):
+
+```{r head-10-lines, echo=FALSE}
+data <- read.csv("consumption.csv", sep=",", header=T)
+subset(data, select=c(Date,PriceGas,PriceElec,PriceWater))[1:10, ]
+```
+
+
+
+## Lessons learned
+
+- Necessary to use reactive function as soon as I have 2 inputs or more.
+
+- In the renderPlot function, the name of the dataframe must be followed by
+  parentheses. Tons of new things learned with the exercise and very amazed to see what all wonders can be done by "R".
+
+
+## Conclusion
+
+- This was very new to me and I think this is very awesome way to represent data insights. I am super excited to write many more applications. I would like to thank Coursera and my references: youtube,stackoverflow and github.
